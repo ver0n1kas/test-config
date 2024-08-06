@@ -1,0 +1,64 @@
+Org:
+  Name: "Org1"
+  OrgUsers:
+    LDAP:
+      OrgManagers:
+        - "manager1@example.com"
+        - "manager2@example.com"
+      OrgAuditors:
+        - "auditor1@example.com"
+        - "auditor2@example.com"
+    SSO:
+      OrgManagers:
+        - "sso_manager1@example.com"
+        - "sso_manager2@example.com"
+      OrgAuditors:
+        - "sso_auditor1@example.com"
+        - "sso_auditor2@example.com"
+    UAA:
+      OrgManagers:
+        - "uaa_manager1@example.com"
+        - "uaa_manager2@example.com"
+      OrgAuditors:
+        - "uaa_auditor1@example.com"
+        - "uaa_auditor2@example.com"
+  Spaces:
+    - Name: "Development"
+      IsolationSeg: "default"
+      ASG: "default-asg"
+      SpaceUsers:
+        LDAP:
+          SpaceManagers:
+            - "dev_manager1@example.com"
+            - "dev_manager2@example.com"
+          SpaceDevelopers:
+            - "dev_developer1@example.com"
+            - "dev_developer2@example.com"
+          SpaceAuditors:
+            - "dev_auditor1@example.com"
+            - "dev_auditor2@example.com"
+        UAA:
+          SpaceManagers:
+            - "uaa_dev_manager1@example.com"
+            - "uaa_dev_manager2@example.com"
+          SpaceDevelopers:
+            - "uaa_dev_developer1@example.com"
+            - "uaa_dev_developer2@example.com"
+          SpaceAuditors:
+            - "uaa_dev_auditor1@example.com"
+            - "uaa_dev_auditor2@example.com"
+        SSO:
+          SpaceManagers:
+            - "sso_dev_manager1@example.com"
+            - "sso_dev_manager2@example.com"
+          SpaceDevelopers:
+            - "sso_dev_developer1@example.com"
+            - "sso_dev_developer2@example.com"
+          SpaceAuditors:
+            - "sso_dev_auditor1@example.com"
+            - "sso_dev_auditor2@example.com"
+SpaceAudit: "2023-01-01"
+UserAudit: "2023-01-01"
+ASGAudit: "2023-01-01"
+IsolationAudit: "2023-01-01"
+

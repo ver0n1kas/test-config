@@ -1,0 +1,11 @@
+OrgList:
+  - Name: "Org1"
+    Repo: "https://github.com/org1/repo"
+    Quota: "default"
+    Branch: "main"
+  - Name: "Org2"
+    Repo: "https://github.com/org2/repo"
+    Quota: "large"
+    Branch: "main"
+Audit: "2023-01-01"
+
