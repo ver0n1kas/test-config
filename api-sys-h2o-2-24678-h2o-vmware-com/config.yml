@@ -1,0 +1,19 @@
+ClusterDetails:
+  EndPoint: "https://api.example.com"
+  User: "admin"
+  Org: "system"
+  Space: "development"
+  EnableASG: true
+  EnableGitSubTree: false
+  GitHost: "https://github.com"
+  SetOrgAuditor: true
+  SetOrgManager: true
+  SetSpaceAuditor: true
+  SetSpaceManager: true
+  SetSpaceDeveloper: true
+  EnableSpaceAudit: true
+  EnableUserAudit: true
+  EnableASGAudit: true
+  EnableIsolationAudit: true
+  SSOProvider: "okta"
+
