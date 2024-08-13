@@ -1,8 +1,0 @@
-Org:
-  - "ProtectedOrg1"
-  - "ProtectedOrg2"
-Quota:
-  - "default"
-  - "large"
-DefaultRunningSecurityGroup: "default-security-group"
-

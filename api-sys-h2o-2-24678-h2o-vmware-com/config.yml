@@ -1,5 +1,5 @@
 ClusterDetails:
-  EndPoint: "https://api.example.com"
+  EndPoint: "https://api.sys.h2o-2-24678.h2o.vmware.com"
   User: "admin"
   Org: "system"
   Space: "development"

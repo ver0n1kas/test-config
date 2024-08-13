@@ -1,7 +1,0 @@
-OrgList:
-  - Name: "Org1"
-    Quota: "default"
-  - Name: "Org2"
-    Quota: "large"
-Audit: "2023-01-01"
-
