@@ -1,0 +1,8 @@
+---
+OrgState:
+  OldName: 
+    type: string
+  NewName: 
+    type: string
+  OrgGuid: 
+    type: string
