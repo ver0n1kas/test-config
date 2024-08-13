@@ -59,7 +59,7 @@ Org:
           SpaceAuditors:
             - "sso_dev_auditor1@example.com"
             - "sso_dev_auditor2@example.com"
-  SpaceAudit: "2023-01-01"
+  SpaceAudit: "2023-01-02"
   UserAudit: "2023-01-01"
   ASGAudit: "2023-01-01"
   IsolationAudit: "2023-01-01"
