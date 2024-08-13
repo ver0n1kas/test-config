@@ -3,9 +3,6 @@ on:
     paths:
       - '**.yml'
       - '**.yaml'
-release:
-  types: [created]
-
 name: Validate YAML
 jobs:
   releases-matrix:
