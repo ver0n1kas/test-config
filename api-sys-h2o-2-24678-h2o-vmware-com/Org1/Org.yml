@@ -9,6 +9,7 @@ Org:
       OrgAuditors:
         - "auditor1@example.com"
         - "auditor2@example.com"
+        - "auditor3@example.com"
     SSO:
       OrgManagers:
         - "sso_manager1@example.com"
