@@ -14,5 +14,5 @@ jobs:
         with:
           schema: spec.json
           data: |-
-            GitOrgsList.yml
-            OrgList.yml
+            api-sys-h2o-2-24678-h2o-vmware-com/GitOrgsList.yml
+            api-sys-h2o-2-24678-h2o-vmware-com/OrgList.yml
