@@ -16,14 +16,14 @@ jobs:
         id: validate-org
         uses: GrantBirki/json-yaml-validate@v3.0.0
         with:
-          yaml_schema: org-schema.yml # validate YAML files against the schema
+          yaml_schema: org-schema.yml
           files: |
             api-sys-h2o-2-24678-h2o-vmware-com/Org1/Org.yml
       - name: validate-org-state
         id: validate-org-state
         uses: GrantBirki/json-yaml-validate@v3.0.0
         with:
-          yaml_schema: org-schema.yml # validate YAML files against the schema
+          yaml_schema: org-state-schema.yml 
           files: |
             api-sys-h2o-2-24678-h2o-vmware-com/Org1/OrgState.yml
 
