@@ -1,18 +1,23 @@
+name: json-yaml-validate 
 on:
   push:
-    paths:
-      - '**.yml'
-      - '**.yaml'
-name: Validate YAML
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
 jobs:
-  releases-matrix:
-    name: Validate YAML
+  json-yaml-validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: RomanosTrechlis/actions-validate-yaml@master
-        with:
-          schema: spec.json
-          data: |-
-            api-sys-h2o-2-24678-h2o-vmware-com/GitOrgsList.yml
-            api-sys-h2o-2-24678-h2o-vmware-com/OrgList.yml
+      - uses: actions/checkout@v4
+      - name: json-yaml-validate
+        id: json-yaml-validate
+        uses: GrantBirki/json-yaml-validate@v3.0.0
+
+
+
+
+
+
