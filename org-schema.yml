@@ -56,11 +56,3 @@ Org:
     type: string
   IsolationAudit: 
     type: string
----
-OrgState:
-  OldName: 
-    type: string
-  NewName: 
-    type: string
-  OrgGuid: 
-    type: string
