@@ -17,7 +17,7 @@ jobs:
         uses: GrantBirki/json-yaml-validate@v3.0.0
         with:
           yaml_schema: org-schema.yml # validate YAML files against the schema
-          base_dir: api-sys-h2o-2-24678-h2o-vmware-com
+          base_dir: api-sys-h2o-2-24678-h2o-vmware-com/Org1
 
 
 
