@@ -2,7 +2,7 @@ ClusterDetails:
   EndPoint: "https://api.sys.h2o-2-24678.h2o.vmware.com"
   User: "admin"
   Org: "system"
-  Space: ""
+  Space: "system"
   EnableASG: true
   EnableGitSubTree: false
   GitHost: "https://github.com"
