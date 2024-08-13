@@ -1,0 +1,58 @@
+---
+Org:
+  Name: 
+    type: string
+    required: true
+  OrgUsers:
+    LDAP:
+      OrgManagers:
+        - type: string
+      OrgAuditors:
+        - type: string
+    SSO:
+      OrgManagers:
+        - type: string
+      OrgAuditors:
+        - type: string
+    UAA:
+      OrgManagers:
+        - type: string
+      OrgAuditors:
+        - type: string
+  Spaces:
+    - Name: 
+      type: string
+      IsolationSeg: 
+        type: string
+      ASG: 
+        type: string
+      SpaceUsers:
+        LDAP:
+          SpaceManagers:
+            - type: string
+          SpaceDevelopers:
+            - type: string
+          SpaceAuditors:
+            - type: string
+        UAA:
+          SpaceManagers:
+            - type: string
+          SpaceDevelopers:
+            - type: string
+          SpaceAuditors:
+            - type: string
+        SSO:
+          SpaceManagers:
+            - type: string
+          SpaceDevelopers:
+            - type: string
+          SpaceAuditors:
+            - type: string
+  SpaceAudit: 
+    type: string
+  UserAudit: 
+    type: string
+  ASGAudit: 
+    type: string
+  IsolationAudit: 
+    type: string
