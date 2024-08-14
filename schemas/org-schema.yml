@@ -21,7 +21,7 @@ Org:
         - type: string
   Spaces:
     - Name: 
-    type: string
+        type: string
       IsolationSeg: 
         type: string
       ASG: 
