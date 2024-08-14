@@ -1,0 +1,48 @@
+{
+    "guid": { "type": "string", "required": true },
+    "created_at": { "type": "string" , "required": true},
+    "updated_at": { "type": "string", "required": true },
+    "name": { "type": "string", "required": true },
+    "suspended": { "type": "boolean", "required": true },
+    "relationships": {
+       "quota": {
+          "data": {
+             "guid": { "type": "string", "required": true }
+          }
+       }
+    },
+    "metadata": {
+       "labels": { "type": "object"},
+       "annotations": { "type": "object"}
+    },
+    "links": {
+       "self": {
+          "href": { "type": "string", "required": true }
+       },
+       "domains": {
+          "href": { "type": "string", "required": true }
+       },
+       "default_domain": {
+          "href": { "type": "string", "required": true }
+       },
+       "quota": {
+          "href": { "type": "string", "required": true }
+       }
+    }
+ }
+
+
+
+// {
+//     "person": {
+//       "names": {
+//         "first_name": { "type": "string", "length": { "min": 3, "max": 32 } },
+//         "last_name": { "type": "string" }
+//       },
+//       "id": { "type": "string" },
+//       "age": { "type": "number", "required": true },
+//       "employeed": { "type": "boolean" },
+//       "hobbies": [{"type": "string"}],
+//       "attributes": [{ "foo": { "type": "string" } }]
+//     }
+//   }
