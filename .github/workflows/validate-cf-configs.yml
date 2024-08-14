@@ -18,8 +18,7 @@ jobs:
         with:
           yaml_schema: schemas/org-schema.yml
           files: |
-            api-sys-h2o-2-24678-h2o-vmware-com/Org1/Org.yml
-            api-sys-h2o-2-24678-h2o-vmware-com/Org2/Org.yml
+            api-sys-h2o-2-24678-h2o-vmware-com/*/Org.yml
       - name: validate-org-state
         id: validate-org-state
         uses: GrantBirki/json-yaml-validate@v3.0.0
@@ -27,7 +26,6 @@ jobs:
           yaml_schema: schemas/org-state-schema.yml 
           files: |
             api-sys-h2o-2-24678-h2o-vmware-com/*/OrgState.yml
-            api-sys-h2o-2-24678-h2o-vmware-com/Org2/OrgState.yml
 
 
 
