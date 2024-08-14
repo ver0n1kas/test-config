@@ -30,19 +30,3 @@
        }
     }
  }
-
-
-
-// {
-//     "person": {
-//       "names": {
-//         "first_name": { "type": "string", "length": { "min": 3, "max": 32 } },
-//         "last_name": { "type": "string" }
-//       },
-//       "id": { "type": "string" },
-//       "age": { "type": "number", "required": true },
-//       "employeed": { "type": "boolean" },
-//       "hobbies": [{"type": "string"}],
-//       "attributes": [{ "foo": { "type": "string" } }]
-//     }
-//   }
