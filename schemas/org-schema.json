@@ -17,107 +17,6 @@
       },
       "suspended": {
         "type": "boolean"
-      },
-      "relationships": {
-        "type": "object",
-        "properties": {
-          "quota": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "object",
-                "properties": {
-                  "guid": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "guid"
-                ]
-              }
-            },
-            "required": [
-              "data"
-            ]
-          }
-        },
-        "required": [
-          "quota"
-        ]
-      },
-      "metadata": {
-        "type": "object",
-        "properties": {
-          "labels": {
-            "type": "object",
-            "properties": {},
-            "required": []
-          },
-          "annotations": {
-            "type": "object",
-            "properties": {},
-            "required": []
-          }
-        },
-        "required": [
-          "labels",
-          "annotations"
-        ]
-      },
-      "links": {
-        "type": "object",
-        "properties": {
-          "self": {
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "href"
-            ]
-          },
-          "domains": {
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "href"
-            ]
-          },
-          "default_domain": {
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "href"
-            ]
-          },
-          "quota": {
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "href"
-            ]
-          }
-        },
-        "required": [
-          "self",
-          "domains",
-          "default_domain",
-          "quota"
-        ]
       }
     },
     "required": [
@@ -125,9 +24,6 @@
       "created_at",
       "updated_at",
       "name",
-      "suspended",
-      "relationships",
-      "metadata",
-      "links"
+      "suspended"
     ]
   }
