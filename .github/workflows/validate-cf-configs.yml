@@ -33,7 +33,13 @@ jobs:
           json_schema: schemas/org-schema.json
           files: |
             api-sys-h2o-2-24678-h2o-vmware-com/*/Org.json
-
+      - name: validate-org-state-json
+        id: validate-org-state-json
+        uses: GrantBirki/json-yaml-validate@v3.0.0
+        with:
+          yaml_schema: schemas/org-state-schema.json
+          files: |
+            api-sys-h2o-2-24678-h2o-vmware-com-state/Org*_OrgState.json
 
 
 
