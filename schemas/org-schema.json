@@ -1,28 +1,12 @@
 {
     "type": "object",
     "properties": {
-      "guid": {
-        "type": "string"
-      },
-      "created_at": {
-        "type": "string"
-      },
-      "updated_at": {
-        "type": "string"
-      },
       "name": {
         "type": "string"
-      },
-      "suspended": {
-        "type": "boolean"
       }
     },
     "required": [
-      "guid",
-      "created_at",
-      "updated_at",
-      "name",
-      "suspended"
+      "name"
     ],
     "additionalProperties": false
   }
