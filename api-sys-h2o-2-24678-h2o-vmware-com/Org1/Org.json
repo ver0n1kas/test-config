@@ -1,3 +1,4 @@
 {
-    "Name": "Org_1"
+   "foo": 1,
+   "bar": "abc"
  }

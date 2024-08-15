@@ -1,12 +1,15 @@
 {
     "type": "object",
     "properties": {
-      "Name": {
+      "foo": {
+        "type": "integer"
+      },
+      "bar": {
         "type": "string"
       }
     },
     "required": [
-      "Name"
+      "foo"
     ],
     "additionalProperties": false
   }
