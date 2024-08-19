@@ -1,0 +1,80 @@
+enable-delete-isolation-segments: false
+enable-unassign-security-groups: false
+skip-unassign-security-group-regex: ""
+running-security-groups:
+  - default_security_group
+staging-security-groups:
+  - default_security_group
+shared-domains:
+  apps.internal:
+    internal: true
+  apps.internal.pioneer-sandbox.humana.com:
+    internal: false
+enable-remove-shared-domains: true
+metadata-prefix: cf-mgmt.pivotal.io
+use-metadata-prefix: true
+enable-service-access: true
+ignore-legacy-service-access: false
+service-access:
+  - broker: app-autoscaler
+    services:
+      - service: app-autoscaler
+        all_access_plans:
+          - standard
+  - broker: nfsbroker
+    services:
+      - service: nfs-legacy
+        no_access_plans:
+          - Existing
+      - service: nfs
+        no_access_plans:
+          - Existing
+  - broker: smbbroker
+    services:
+      - service: smb
+        no_access_plans:
+          - Existing
+  - broker: scheduler-for-pcf
+    services:
+      - service: scheduler-for-pcf
+        all_access_plans:
+          - standard
+  - broker: scs-service-broker
+    services:
+      - service: p.config-server
+        all_access_plans:
+          - standard
+      - service: p.service-registry
+        all_access_plans:
+          - standard
+  - broker: p-redis
+    services:
+      - service: p-redis
+        all_access_plans:
+          - shared-vm
+  - broker: dedicated-mysql-broker
+    services:
+      - service: p.mysql
+        all_access_plans:
+          - db-xlarge
+          - db-small
+          - db-medium
+          - db-large
+  - broker: scs-mirror-service
+    services:
+      - service: p.mirror-service
+        limited_access_plans:
+          - plan: standard
+  - broker: redis-odb
+    services:
+      - service: p.redis
+        limited_access_plans:
+          - plan: cache-small
+          - plan: cache-medium
+  - broker: rabbitmq-odb
+    services:
+      - service: p.rabbitmq
+        all_access_plans:
+          - multi-node-3.7-plan1
+          - multi-node-3.7-plan2
+protected-users: []
