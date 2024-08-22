@@ -26,6 +26,12 @@ steps:
       }
       EOF
       jsonlint-cli api-sys-h2o-2-24678-h2o-vmware-com/**/*.json
-      if [ $? -ne 0 ] then; exit 1; fi
+             if [ "$?" -ne "0" ]
+      then 
+      Error=true
+      echo ERROR STATUS $Error
+      fi
+      done
+      if [ $Error ]; then exit 1; fi 
     displayName: 'Run Node.js script'
 
