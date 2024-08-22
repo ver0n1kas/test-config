@@ -23,7 +23,7 @@ Org:
         - "uaa_manager2@example.com"
       OrgAuditors:
         - "uaa_auditor1@example.com"
-         - "uaa_auditor2@example.com"
+        - "uaa_auditor2@example.com"
   Spaces:
     - Name: "Development"
       IsolationSeg: "default"
