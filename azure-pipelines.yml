@@ -16,7 +16,7 @@ steps:
     displayName: 'Install Node.js'
 
   - script: |
-      npm install jsonlint-cli
+      npm install -g jsonlint-cli
       cat << EOF > .jsonlintrc
       {
       "validate": "",
