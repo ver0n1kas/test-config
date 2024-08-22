@@ -31,7 +31,6 @@ steps:
       Error=true
       echo ERROR STATUS $Error
       fi
-      done
       if [ $Error ]; then exit 1; fi 
     displayName: 'Run Node.js script'
 
