@@ -15,9 +15,20 @@ steps:
       versionSpec: '20.x'
     displayName: 'Install Node.js'
 
-  # - script: |
-  #     node script.js      
-  #   displayName: 'Run Node.js script'
+  - script: |
+      npm install jsonlint-cli
+      cat << EOF > .jsonlintrc
+      {
+      "validate": "",
+      "ignore": ["node_modules/**/*"],
+      "indent": "",
+      "env": "json-schema-draft-04",
+      }
+      EOF
+      jsonlint-cli api-sys-h2o-2-24678-h2o-vmware-com/**/*.json
+      result=$?
+      echo $result
+    displayName: 'Run Node.js script'
 
   # - script: |
   #     echo $(VARIABLE_NAME) 
