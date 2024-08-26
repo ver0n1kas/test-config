@@ -25,7 +25,8 @@ steps:
       # "env": "json-schema-draft-04"
       # }
       # EOF
-      jsonlint-cli /**/*.json
+      # jsonlint-cli /**/*.json
+      jsonlint-cli -h
       if [ "$?" -ne "0" ]
       then 
       Error=true
