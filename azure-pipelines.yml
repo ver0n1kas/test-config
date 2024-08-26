@@ -25,8 +25,7 @@ steps:
       # "env": "json-schema-draft-04"
       # }
       # EOF
-      # jsonlint-cli /**/*.json
-      jsonlint-cli -h
+      jsonlint-cli api-sys-h2o-2-24678-h2o-vmware-com/Org1/Org.json
       if [ "$?" -ne "0" ]
       then 
       Error=true
