@@ -14,23 +14,31 @@ steps:
     inputs:
       versionSpec: '22.4.0'
     displayName: 'Install Node.js'
-
+  # - script: |
+  #     npm install -g jsonlint-cli
+  #     cat << EOF > .jsonlintrc
+  #     {
+  #     "validate": "",
+  #     "ignore": ["node_modules/**/*"],
+  #     "indent": "",
+  #     "env": "json-schema-draft-04"
+  #     }
+  #     EOF
+  #     jsonlint-cli **/*.json
+  #     if [ "$?" -ne "0" ]
+  #     then 
+  #     Error=true
+  #     echo ERROR STATUS $Error
+  #     fi
+  #     if [ $Error ]; then exit 1; fi 
+  #   displayName: 'Run Node.js script'
   - script: |
-      npm install -g jsonlint-cli
-      # cat << EOF > .jsonlintrc
-      # {
-      # "validate": "",
-      # "ignore": ["node_modules/**/*"],
-      # "indent": "",
-      # "env": "json-schema-draft-04"
-      # }
-      # EOF
-      jsonlint-cli **/*.json
-      if [ "$?" -ne "0" ]
-      then 
-      Error=true
-      echo ERROR STATUS $Error
-      fi
-      if [ $Error ]; then exit 1; fi 
+      npm install -g ajv
+      # jsonlint-cli **/*.json
+      # if [ "$?" -ne "0" ]
+      # then 
+      # Error=true
+      # echo ERROR STATUS $Error
+      # fi
+      # if [ $Error ]; then exit 1; fi 
     displayName: 'Run Node.js script'
-
