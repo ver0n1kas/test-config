@@ -34,7 +34,7 @@ steps:
   #   displayName: 'Run Node.js script'
   - script: |
       npm install -g ajv
-      # jsonlint-cli **/*.json
+      node validateJSON.js schemas/org-schema.json  api-sys-h2o-2-24678-h2o-vmware-com/Org1/Org.json
       # if [ "$?" -ne "0" ]
       # then 
       # Error=true
