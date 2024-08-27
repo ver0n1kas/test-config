@@ -66,7 +66,7 @@ async function validateAgainstSchema(schemaFile, jsonFile) {
       tempJsonSource = jsonFile
       const valid = validate(JSON.parse(jsonToValidate))
       if (!valid){
-        errors.push("Schema validation faled for " + jsonFile + ". " + ajv.errorsText(validate.errors))
+        errors.push("Schema validation failed for " + jsonFile + ". " + ajv.errorsText(validate.errors))
       }
     } catch (error) {
       errors.push("Bad json file: " + tempJsonSource  + "\n" + error)
