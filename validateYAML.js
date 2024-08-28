@@ -3,7 +3,7 @@ const fs = require('fs');
 const fsp = require('node:fs/promises');
 var path = require('path');
 
-var errors = ""
+var failedValidation = false
 
 const schemaMapping = {"org-schema": ".*\\Org\.(yml|yaml)$",
   "orgstate-schema" : ".*\\Org[0-9]*_OrgState\.(yml|yaml)$"
@@ -25,8 +25,8 @@ async function performValidation() {
         }
     }
   }
-  if (errors != null && errors != "") {
-    throw new Error("Schema validation failed for " + fileToValidate + ".\n" + errors)
+  if (failedValidation) {
+    throw new Error("Schema validation failed for " + fileToValidate)
   } 
 }
 
@@ -36,12 +36,7 @@ async function validateAgainstSchema(schemaFile, yamlFile) {
       schemaPath: schemaFile
     })
     if (validationResult.length > 0){
-      for (i in validationResult) {
-        path = validationResult[i].path
-        message = validationResult[i].message
-        errors = `Validation error: ${message} Path: ${path}`
-        errors += "\n"
-      }
+      failedValidation = true
     }
   } catch (error) {
     throw new Error("Bad yaml file" + error)
