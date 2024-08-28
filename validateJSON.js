@@ -11,20 +11,28 @@ const schemaMapping = {"org-schema": ".*\\Org\.json$",
 }
 const schemaPath = "schemas"
 
-async function performValidation() {
-  var files = await fs.readdirSync(schemaPath);
+//get file from arg
 
-  for (i in files) {
-    var schemaFile = files[i]
+fileToValidate = process.argv[2]
+
+async function performValidation() {
+  var schemaFiles = await fs.readdirSync(schemaPath);
+
+  for (i in schemaFiles) {
+    var schemaFile = schemaFiles[i]
     var pattern = schemaMapping[schemaFile.replace(".json", "")]
     if (pattern) {
-      var filesToValidate = await walkSync(pattern, ".", []);
-      for (f in filesToValidate) {
-        await validateAgainstSchema(path.join(schemaPath, schemaFile), filesToValidate[f])
-      }
+      // var filesToValidate = await walkSync(pattern, ".", []);
+      // for (f in filesToValidate) {
+      //   if (filesToValidate[f].match(pattern)) {
+      //     validateAgainstSchema(path.join(schemaPath, schemaFile), filesToValidate[f])
+      //   }
+      // }
+        if (fileToValidate.match(pattern)) {
+          await validateAgainstSchema(path.join(schemaPath, schemaFile), fileToValidate)
+        }
     }
-  }
-
+  } 
   if (errors.length > 0) {
     var errorString = "";
     for (e in errors) {
@@ -34,22 +42,7 @@ async function performValidation() {
     throw new Error(errorString)
   } 
 }
-async function walkSync(pattern, dir, filelist) {
-  var files = await fs.readdirSync(dir);
-  filelist = filelist || [];
-  for (i in files) {;
-    var file = files[i];
-    if (fs.statSync(path.resolve(dir, file)).isDirectory()) {
-      filelist = await walkSync(pattern, path.join(dir, file), filelist);
-    }
-    else {
-      if (file.match(pattern)) {
-        filelist.push(path.resolve(dir, file));
-      }
-    }
-  }
-  return filelist;
-};
+
 
 async function validateAgainstSchema(schemaFile, jsonFile) {
   var schemaContents =  await fsp.readFile(schemaFile,  'utf8');
@@ -73,4 +66,5 @@ async function validateAgainstSchema(schemaFile, jsonFile) {
     }
   }
 }
-performValidation();
+// performValidation();
+console.log("TEST" + fileToValidate)
