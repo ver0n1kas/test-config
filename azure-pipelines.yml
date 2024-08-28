@@ -39,12 +39,12 @@ steps:
       files=`git diff --name-only HEAD HEAD^ | grep '.json'`
       for file in $files;
       do
-      echo $file
+      echo $file;
       node validateJSON_v2.js $file;
       if [ "$?" -ne "0" ]
       then 
-      Error=true
-      echo ERROR STATUS $Error
+      Error=true;
+      echo ERROR STATUS $Error;
       fi      
       done
       # if [ $Error ]; then exit 1; fi 
