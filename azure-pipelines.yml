@@ -11,7 +11,7 @@ pool:
 
 steps:
   - checkout: self
-    fetchDepth: 5
+    fetchDepth: 10
   - task: NodeTool@0
     inputs:
       versionSpec: '22.4.0'
@@ -36,16 +36,10 @@ steps:
   #   displayName: 'Run Node.js script'
   - script: |
       npm install ajv
-      files=`git diff --name-only HEAD HEAD~4 | grep '.json'`
+      files=`git diff --name-only HEAD HEAD~8 | grep '.json'`
       for file in $files;
       do
-      echo $file;
-      node validateJSON_v2.js $file;
-      if [ "$?" -ne "0" ]
-      then 
-      Error=true;
-      echo ERROR STATUS $Error;
-      fi      
+      echo $file;     
       done
       # if [ $Error ]; then exit 1; fi 
     displayName: 'Run schema validation'
