@@ -11,8 +11,6 @@ const schemaMapping = {"org-schema": ".*\\Org\.json$",
 }
 const schemaPath = "schemas"
 
-//get file from arg
-
 fileToValidate = process.argv[2]
 
 async function performValidation() {
