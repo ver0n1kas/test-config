@@ -68,4 +68,7 @@ async function validateAgainstSchema(schemaFile, jsonFile) {
 }
 // performValidation();
 console.log("TEST" + fileToValidate)
-throw new Error("test2")
+if (fileToValidate == "api-sys-h2o-2-24678-h2o-vmware-com/Org1/Org.json" || fileToValidate == "schemas/org-state-schema.json") {
+  throw new Error("test3")
+}
+
