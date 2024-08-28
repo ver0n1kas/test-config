@@ -33,14 +33,6 @@ async function performValidation() {
         }
     }
   } 
-  if (errors.length > 0) {
-    var errorString = "";
-    for (e in errors) {
-      errorString += errors[e]
-      errorString += "\n"
-    }
-    throw new Error(errorString)
-  } 
 }
 
 
@@ -48,9 +40,9 @@ async function validateAgainstSchema(schemaFile, jsonFile) {
   var schemaContents =  await fsp.readFile(schemaFile,  'utf8');
   var jsonToValidate = await fsp.readFile(jsonFile, 'utf8')
   if (schemaContents == null || schemaContents == '') {
-    errors.push("Schema file " + schemaFile + " is empty")
+    throw new Error("Schema file " + schemaFile + " is empty")
   }else if (jsonToValidate == null || jsonToValidate == '') {
-    errors.push("File being validated " + jsonToValidate + " is empty")
+    throw new Error("File being validated " + jsonToValidate + " is empty")
   } else {
     try {
       var tempJsonSource = schemaFile
@@ -59,16 +51,13 @@ async function validateAgainstSchema(schemaFile, jsonFile) {
       tempJsonSource = jsonFile
       const valid = validate(JSON.parse(jsonToValidate))
       if (!valid){
-        errors.push("Schema validation failed for " + jsonFile + ". " + ajv.errorsText(validate.errors))
+        throw new Error("Schema validation failed for " + jsonFile + ". " + ajv.errorsText(validate.errors))
       }
     } catch (error) {
-      errors.push("Bad json file: " + tempJsonSource  + "\n" + error)
+      throw new Error("Bad json file: " + tempJsonSource  + "\n" + error)
     }
   }
 }
-// performValidation();
-console.log("TEST" + fileToValidate)
-if (fileToValidate == "api-sys-h2o-2-24678-h2o-vmware-com/Org1/Org.json" || fileToValidate == "schemas/org-state-schema.json") {
-  throw new Error("test3")
-}
+performValidation();
+
 
