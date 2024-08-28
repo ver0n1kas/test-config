@@ -47,4 +47,5 @@ steps:
       echo ERROR STATUS $Error;
       fi      
       done
+      if [ $Error ]; then exit 1; fi 
     displayName: 'Run schema validation'
