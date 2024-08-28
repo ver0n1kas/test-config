@@ -37,9 +37,5 @@ steps:
   - script: |
       npm install ajv
       files=`git diff --name-only HEAD HEAD~8 | grep '.json'`
-      for file in $files;
-      do
-      echo $file;     
-      done
-      # if [ $Error ]; then exit 1; fi 
+      echo "FILES: "$files
     displayName: 'Run schema validation'
