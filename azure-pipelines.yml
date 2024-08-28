@@ -11,7 +11,8 @@ pool:
 
 steps:
   - checkout: self
-    fetchDepth: 10
+    clean: true
+    fetchDepth: 100
   - task: NodeTool@0
     inputs:
       versionSpec: '22.4.0'
@@ -36,6 +37,6 @@ steps:
   #   displayName: 'Run Node.js script'
   - script: |
       npm install ajv
-      files=`git diff --name-only HEAD HEAD~8 | grep '.json'`
+      files=`git diff --name-only HEAD HEAD~8`
       echo "FILES: "$files
     displayName: 'Run schema validation'
