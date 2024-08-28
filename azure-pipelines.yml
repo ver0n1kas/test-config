@@ -36,7 +36,7 @@ steps:
   #   displayName: 'Run Node.js script'
   - script: |
       npm install ajv
-      files=`git diff --name-only HEAD HEAD^ | grep '.json'
+      files=`git diff --name-only HEAD HEAD^ | grep '.json'`
       for file in $files;
       do
       echo $file
