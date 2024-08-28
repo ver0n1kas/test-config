@@ -12,10 +12,10 @@ pool:
 steps:
   - checkout: self
     clean: true
-    fetchDepth: 100
+    fetchDepth: 2
   - task: NodeTool@0
     inputs:
-      versionSpec: '22.4.0'
+      versionSpec: 'lts'
     displayName: 'Install Node.js'
   # - script: |
   #     npm install -g jsonlint-cli
@@ -37,7 +37,7 @@ steps:
   #   displayName: 'Run Node.js script'
   - script: |
       npm install ajv
-      files=`git diff --name-only HEAD HEAD~20 | grep '.json'`
+      files=`git diff --name-only HEAD HEAD^ | grep '.json'`
       for file in $files;
       do
       node validateJSON.js $file;

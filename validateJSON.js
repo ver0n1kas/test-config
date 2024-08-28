@@ -22,12 +22,6 @@ async function performValidation() {
     var schemaFile = schemaFiles[i]
     var pattern = schemaMapping[schemaFile.replace(".json", "")]
     if (pattern) {
-      // var filesToValidate = await walkSync(pattern, ".", []);
-      // for (f in filesToValidate) {
-      //   if (filesToValidate[f].match(pattern)) {
-      //     validateAgainstSchema(path.join(schemaPath, schemaFile), filesToValidate[f])
-      //   }
-      // }
         if (fileToValidate.match(pattern)) {
           console.log("Validating " + fileToValidate)
           await validateAgainstSchema(path.join(schemaPath, schemaFile), fileToValidate)
