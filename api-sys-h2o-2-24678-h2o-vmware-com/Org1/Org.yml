@@ -1,10 +1,11 @@
 Org:
+  Name: "Org1"
   OrgUsers:
     LDAP:
       OrgManagers:
         - "manager1@example.com"
         - "manager2@example.com"
-        - "manager4@example.com"
+        - "manager3@example.com"
       OrgAuditors:
         - "auditor1@example.com"
         - "auditor2@example.com"
