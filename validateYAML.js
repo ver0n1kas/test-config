@@ -33,7 +33,7 @@ async function validateAgainstSchema(schemaFile, yamlFile) {
       schemaPath: schemaFile
     })
     if (validationResult.toLowerCase().startsWith("success")){
-      throw new Error(("Schema validation failed for " + yamlFile + ". " + validationResult)
+      throw new Error("Schema validation failed for " + yamlFile + ". " + validationResult)
     }
   } catch (error) {
     throw new Error("Bad yaml file" + error)
