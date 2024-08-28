@@ -1,5 +1,5 @@
 Org:
-  Name: false
+  Name: true
   OrgUsers:
     LDAP:
       OrgManagers:
