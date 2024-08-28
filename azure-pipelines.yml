@@ -44,7 +44,6 @@ steps:
       if [ "$?" -ne "0" ]
       then 
       Error=true;
-      echo ERROR STATUS $Error;
       fi      
       done
       if [ $Error ]; then exit 1; fi 
