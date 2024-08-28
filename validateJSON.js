@@ -29,6 +29,7 @@ async function performValidation() {
       //   }
       // }
         if (fileToValidate.match(pattern)) {
+          console.log("Validating " + fileToValidate)
           await validateAgainstSchema(path.join(schemaPath, schemaFile), fileToValidate)
         }
     }
