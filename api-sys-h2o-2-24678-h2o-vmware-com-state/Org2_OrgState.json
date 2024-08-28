@@ -1,6 +1,7 @@
 {
   "OldName": "Org2",
   "NewName": "Org2",
-  "OrgGuid": "org-guid-2"
+  "OrgGuid": "org-guid-2",
+  "test": "blah"
 }
 
