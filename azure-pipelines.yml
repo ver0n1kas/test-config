@@ -40,6 +40,11 @@ steps:
       files=`git diff --name-only HEAD HEAD~20`
       for file in $files;
       do
-      node validateJSON.js $file;     
+      node validateJSON.js $file;
+      if [ "$?" -ne "0" ]
+      then 
+      Error=true;
+      echo ERROR STATUS $Error;
+      fi      
       done
     displayName: 'Run schema validation'
