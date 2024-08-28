@@ -36,11 +36,16 @@ steps:
   #   displayName: 'Run Node.js script'
   - script: |
       npm install ajv
-      node validateJSON.js schemas/org-schema.json  api-sys-h2o-2-24678-h2o-vmware-com/Org1/Org.json
-      # if [ "$?" -ne "0" ]
-      # then 
-      # Error=true
-      # echo ERROR STATUS $Error
-      # fi
+      files=`git diff --name-only HEAD HEAD^ | grep '.json'
+      for file in $files;
+      do
+      echo $file
+      node validateJSON_v2.js $file;
+      if [ "$?" -ne "0" ]
+      then 
+      Error=true
+      echo ERROR STATUS $Error
+      fi      
+      done
       # if [ $Error ]; then exit 1; fi 
-    displayName: 'Run Node.js script'
+    displayName: 'Run schema validation'
