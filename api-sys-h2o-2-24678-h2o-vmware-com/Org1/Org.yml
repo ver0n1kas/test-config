@@ -1,6 +1,6 @@
 Org:
   Name: "Org1"
-  OrgUsers:
+   OrgUsers:
     LDAP:
       OrgManagers:
         - "manager1@example.com"

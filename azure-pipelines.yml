@@ -35,16 +35,29 @@ steps:
   #     fi
   #     if [ $Error ]; then exit 1; fi 
   #   displayName: 'Run Node.js script'
+  # - script: |
+  #     npm install ajv
+  #     files=`git diff --name-only HEAD HEAD^ | grep '.json'`
+  #     for file in $files;
+  #     do
+  #     node validateJSON.js $file;
+  #     if [ "$?" -ne "0" ]
+  #     then 
+  #     Error=true;
+  #     fi      
+  #     done
+  #     if [ $Error ]; then exit 1; fi 
+  #   displayName: 'Run schema validation'
   - script: |
-      npm install ajv
-      files=`git diff --name-only HEAD HEAD^ | grep '.json'`
+      npm install yaml-schema-validator
+      files=`git diff --name-only HEAD HEAD^ | grep -E '\.(yml|yaml)$'`
       for file in $files;
       do
-      node validateJSON.js $file;
+      node validateYAML.js $file;
       if [ "$?" -ne "0" ]
       then 
       Error=true;
       fi      
       done
       if [ $Error ]; then exit 1; fi 
-    displayName: 'Run schema validation'
+    displayName: 'Run yaml schema validation'
