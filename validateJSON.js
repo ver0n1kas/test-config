@@ -67,4 +67,4 @@ async function validateAgainstSchema(schemaFile, jsonFile) {
   }
 }
 // performValidation();
-console.log("TEST" + fileToValidate)
+throw new Error("test")
