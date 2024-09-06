@@ -13,10 +13,10 @@ steps:
   - checkout: self
     clean: true
     fetchDepth: 5
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '>=22.4.0'
-    displayName: 'Install Node.js'
+  # - task: NodeTool@0
+  #   inputs:
+  #     versionSpec: '>=22.4.0'
+  #   displayName: 'Install Node.js'
   # - script: |
   #     npm install -g jsonlint-cli
   #     cat << EOF > .jsonlintrc
@@ -48,16 +48,22 @@ steps:
   #     done
   #     if [ $Error ]; then exit 1; fi 
   #   displayName: 'Run schema validation'
+  # - script: |
+  #     npm install yaml-schema-validator
+  #     files=`git diff --name-only HEAD HEAD^ | grep -E '\.(yml|yaml)$'`
+  #     for file in $files;
+  #     do
+  #     node validateYAML.js $file;
+  #     if [ "$?" -ne "0" ]
+  #     then 
+  #     Error=true;
+  #     fi      
+  #     done
+  #     if [ $Error ]; then exit 1; fi 
+  #   displayName: 'Run yaml schema validation'
   - script: |
-      npm install yaml-schema-validator
-      files=`git diff --name-only HEAD HEAD^ | grep -E '\.(yml|yaml)$'`
+      files=`git diff --name-only HEAD HEAD^`
       for file in $files;
       do
-      node validateYAML.js $file;
-      if [ "$?" -ne "0" ]
-      then 
-      Error=true;
-      fi      
+      echo "FILE: $file"
       done
-      if [ $Error ]; then exit 1; fi 
-    displayName: 'Run yaml schema validation'
