@@ -6,7 +6,8 @@ var path = require('path');
 var failedValidation = false
 
 const schemaMapping = {"org-schema": ".*\\Org\.(yml|yaml)$",
-  "orgstate-schema" : ".*\\Org[0-9]*_OrgState\.(yml|yaml)$"
+  "orgstate-schema" : ".*\\Org[0-9]*_OrgState\.(yml|yaml)$",
+  "space-schema": ".*\\spaceConfig\.(yml|yaml)$"
 }
 const schemaPath = "schemas"
 

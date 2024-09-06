@@ -7,7 +7,8 @@ var path = require('path');
 const errors = []
 
 const schemaMapping = {"org-schema": ".*\\Org\.json$",
-  "orgstate-schema" : ".*\\Org[0-9]*_OrgState\.json$"
+  "orgstate-schema" : ".*\\Org[0-9]*_OrgState\.json$",
+  "asg-schema": ".*\\asg\.json$"
 }
 const schemaPath = "schemas"
 
@@ -27,7 +28,6 @@ async function performValidation() {
     }
   } 
 }
-
 
 async function validateAgainstSchema(schemaFile, jsonFile) {
   var schemaContents =  await fsp.readFile(schemaFile,  'utf8');

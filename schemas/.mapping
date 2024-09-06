@@ -1,0 +1,3 @@
+{ "org-schema": ".\\*Org\\.json$",
+  "orgstate-schema" : ".*\\Org[0-9]*_OrgState\\.json$"
+}

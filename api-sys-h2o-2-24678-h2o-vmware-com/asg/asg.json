@@ -1,0 +1,26 @@
+[
+    {
+                    "protocol": "tcp",
+                    "destination": "",
+                    "ports": "",
+                    "description": "Allows access to ProductPal mapping service used to approve products",
+                    "log": true
+
+    },
+
+    {
+                    "protocol": "tcp",
+                    "destination": "",
+                    "ports": "",
+                    "description": "Allows access to Vault",
+                    "log": true
+    },
+    {
+                    "protocol": "tcp",
+                    "destination": "",
+                    "ports": "",
+                    "description": "Allows access to ProductPal db",
+                    "log": true
+    }
+
+]

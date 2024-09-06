@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Generated schema for Root",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "ports": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "log": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "protocol",
+        "destination",
+        "ports",
+        "description",
+        "log"
+      ]
+    }
+  }

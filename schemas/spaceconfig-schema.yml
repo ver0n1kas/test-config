@@ -1,0 +1,76 @@
+org: 
+  type: string
+  required: true
+space:
+  type: string
+  required: true
+space-developer:
+  ldap_users:
+    - type: string
+  users:
+    - type: string
+  saml_users:
+    - type: string
+  ldap_groups:
+    - type: string
+space-manager:
+  ldap_users:
+    - type: string
+  users:
+    - type: string
+  saml_users:
+    - type: string
+  ldap_groups:
+    - type: string
+space-auditor:
+  ldap_users:
+    - type: string
+  users:
+    - type: string
+  saml_users:
+    - type: string
+  ldap_groups:
+    - type: string
+space-supporter:
+  ldap_users:
+    - type: string
+  users:
+    - type: string
+  saml_users:
+    - type: string
+  ldap_groups:
+    - type: string
+allow-ssh:
+  type: boolean
+  required: true
+enable-space-quota:
+  type: boolean
+  required: true
+enable-security-group:
+  type: boolean
+  required: true
+enable-unassign-security-group: 
+  type: boolean
+  required: true
+enable-remove-users:
+  type: boolean
+  required: true
+isolation_segment: 
+  type: string
+named-security-groups:
+  type: string
+  required: true
+paid-service-plans-allowed: 
+  type: boolean
+  required: true
+named_quota: 
+  type: string
+metadata:
+  annotations:
+    type: object
+    additionalProperties:
+      type: string
+  labels: {}
+    type: object
+    additionalProperties:
+      type: string
