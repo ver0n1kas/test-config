@@ -65,5 +65,5 @@ steps:
       files=`git diff --name-only HEAD HEAD^`
       for file in $files;
       do
-      echo $file
+      echo "FILE: $file"
       done
