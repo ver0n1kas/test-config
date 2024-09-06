@@ -62,7 +62,7 @@ steps:
   #     if [ $Error ]; then exit 1; fi 
   #   displayName: 'Run yaml schema validation'
   - script: |
-      files=`git diff --name-only HEAD HEAD^
+      files=`git diff --name-only HEAD HEAD^`
       for file in $files;
       do
       echo $file
