@@ -12,7 +12,7 @@ pool:
 steps:
   - checkout: self
     clean: true
-    fetchDepth: 6
+    fetchDepth: 8
   # - task: NodeTool@0
   #   inputs:
   #     versionSpec: '>=22.4.0'
@@ -62,7 +62,7 @@ steps:
   #     if [ $Error ]; then exit 1; fi 
   #   displayName: 'Run yaml schema validation'
   - script: |
-      files=`git diff --name-only HEAD HEAD~5`
+      files=`git diff --name-only HEAD HEAD~6`
       for file in $files;
       do
       echo "FILE: $file"
