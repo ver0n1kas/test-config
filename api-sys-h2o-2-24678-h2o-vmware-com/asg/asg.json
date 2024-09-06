@@ -2,7 +2,7 @@
     {
                     "protocol": "tcp",
                     "destination": "",
-                    "ports": "",
+                    "ports": "1234",
                     "description": "Allows access to ProductPal mapping service used to approve products",
                     "log": true
 
