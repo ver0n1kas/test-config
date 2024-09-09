@@ -9,32 +9,37 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-  - checkout: self
-    clean: true
-    fetchDepth: 20
-  # - task: NodeTool@0
-  #   inputs:
-  #     versionSpec: '>=22.4.0'
-  #   displayName: 'Install Node.js'
-  # - script: |
-  #     npm install -g jsonlint-cli
-  #     cat << EOF > .jsonlintrc
-  #     {
-  #     "validate": "",
-  #     "ignore": ["node_modules/**/*"],
-  #     "indent": "",
-  #     "env": "json-schema-draft-04"
-  #     }
-  #     EOF
-  #     jsonlint-cli **/*.json
-  #     if [ "$?" -ne "0" ]
-  #     then 
-  #     Error=true
-  #     echo ERROR STATUS $Error
-  #     fi
-  #     if [ $Error ]; then exit 1; fi 
-  #   displayName: 'Run Node.js script'
+jobs:
+  - job:
+    steps:
+      - checkout: self
+        clean: true
+        fetchDepth: 5
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '>=22.4.0'
+        displayName: 'Install Node.js'
+      - script: |
+          npm install -g jsonlint-cli
+          cat << EOF > .jsonlintrc
+          {
+          "validate": "",
+          "ignore": ["node_modules/**/*"],
+          "indent": "",
+          "env": "json-schema-draft-04"
+          }
+          EOF
+          for f in `git diff --name-only HEAD HEAD^ | grep '.json'`
+          do
+          jsonlint-cli $f
+          if [ "$?" -ne "0" ]
+          then 
+          Error=true
+          echo ERROR STATUS $Error
+          fi
+          done
+          if [ $Error ]; then exit 1; fi 
+        displayName: 'Run Node.js script'
   # - script: |
   #     npm install ajv
   #     files=`git diff --name-only HEAD HEAD^ | grep '.json'`
@@ -61,9 +66,9 @@ steps:
   #     done
   #     if [ $Error ]; then exit 1; fi 
   #   displayName: 'Run yaml schema validation'
-  - script: |
-      files=`git diff --name-only HEAD HEAD~15`
-      for file in $files;
-      do
-      echo "FILE: $file"
-      done
+  # - script: |
+  #     files=`git diff --name-only HEAD HEAD~15`
+  #     for file in $files;
+  #     do
+  #     echo "FILE: $file"
+  #     done
