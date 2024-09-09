@@ -1,6 +1,5 @@
 ---
 org: Org-1
-space: Space1
 space-developer:
   ldap_users: []
   users: []
